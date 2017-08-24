@@ -8,6 +8,30 @@
     <artifactId>maven-test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>maven test project</name>
+
+    <repositories>
+        <!--定义一个远程仓库-->
+        <repository>
+            <id>jboss-maven2-release-repository</id>
+            <name>JBoss</name>
+            <url>http://repository.jboss.org/maven2/</url>
+            <!--开启发布版本下载支持-->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!--关闭快照版本下载支持-->
+            <snapshots>
+                <enabled>false</enabled>
+                <!--每天检查快照更新-->
+                <updatePolicy>daily</updatePolicy>
+                <!--下载时忽略校验文件-->
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <!--采用默认布局方式 groupId/artifactId/version/artifactId-version.packaging-->
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
     <!--maven中央仓库 http://repo1.maven.org/maven2-->
     <dependencies>
         <dependency>
