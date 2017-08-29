@@ -79,4 +79,20 @@
         </plugins>
     </build>
 
+    <!--远程仓库配置 执行 mvn clean deploy可以将构建部署到远程私服-->
+    <distributionManagement>
+        <!--指定发布版本私服地址-->
+        <repository>
+            <id>my-releases</id>
+            <name>my releases</name>
+            <url>http://repository.com/releases</url>
+        </repository>
+        <!--指定快照版本私服地址-->
+        <snapshotRepository>
+            <id>my-snapshot</id>
+            <name>my snapshot</name>
+            <url>http://repository.com/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
